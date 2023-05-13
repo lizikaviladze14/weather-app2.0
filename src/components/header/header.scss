@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  padding: 5rem 12rem;
+
+  .part {
+    .current-weather-info {
+      margin-top: 3rem;
+    }
+
+    &.right {
+      width: 65%;
+      margin-left: 5%;
+      .base-input {
+        margin-left: auto;
+      }
+      .current-weather-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .current-weather {
+          p {
+            font-size: 4.5rem;
+          }
+          span {
+            font-family: "Roboto-Light", serif;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+          }
+        }
+      }
+    }
+
+    &.left {
+      width: 30%;
+      h1 {
+        font-family: "Roboto-Bold", serif;
+        font-size: 4.5rem;
+      }
+      h2 {
+        font-family: "Roboto-Regular", serif;
+        font-size: 2rem;
+        margin: 0.5rem 0;
+        color: var(--text-secondary);
+      }
+      p {
+        font-family: "Roboto-Light", serif;
+        font-size: 1.2rem;
+        color: #b6c3c9;
+      }
+
+      .weather-icon {
+        margin: 2rem auto 0;
+        text-align: center;
+        img {
+          max-width: 8rem;
+        }
+      }
+    }
+  }
+}

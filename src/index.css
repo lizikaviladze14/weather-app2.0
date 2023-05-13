@@ -1,0 +1,15 @@
+@import "styles/_variables.scss";
+@import "styles/_typography.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--text-primary);
+  background: var(--site-bg-color);
+  font-size: 10px;
+  font-family: "Roboto-Medium", serif;
+}

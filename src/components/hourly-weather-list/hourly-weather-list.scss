@@ -1,0 +1,8 @@
+@import "../../styles/_variables.scss";
+
+.hourly-weather-list {
+  padding: 0 12rem;
+  display: flex;
+  overflow: auto;
+  gap: 2rem;
+}
