@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './change-theme.scss'
+import useTheme from "../../hooks/useTheme";
 
 const ChangeTheme: React.FC = () => {
-    const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('theme') === 'dark-mode');
-
-    const handleClick = () => {
-        const newTheme = isDarkMode ? 'light-mode' : 'dark-mode';
-        localStorage.setItem('theme', newTheme);
-        setIsDarkMode(!isDarkMode);
-    };
+    const {theme, toggleTheme} = useTheme()
 
     return (
-        <div className={`change-theme ${isDarkMode ? "left" : "right"}`} onClick={handleClick}>
+        <div className={`change-theme ${theme === "dark-mode" ? "left" : "right"}`} onClick={toggleTheme}>
             <div className={`theme-button`}></div>
         </div>
     );

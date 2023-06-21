@@ -10,7 +10,7 @@ function App() {
     useEffect(() => {
         const theme = localStorage.getItem("theme");
         if(!theme) {
-            localStorage.setItem('theme', "dark-mode");
+            localStorage.setItem('theme', "light-mode");
         }
     }, [])
     const {currentWeather, dailyWeather, hourlyWeather, isLoading} = useWeather();

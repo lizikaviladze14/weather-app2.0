@@ -4,7 +4,8 @@ import BaseInput from "../base/input/base-input";
 import CurrentWeatherInfo from "../current-weather-info/current-weather-info";
 import {CurrentWeatherType} from "../../types";
 import BaseLoader from "../base/loader/base-loader";
-import {weatherIcons} from "../../types/WeatherIcons";
+import {useWeatherIcons} from "../../hooks/useWeatherIcons";
+import useTheme from "../../hooks/useTheme";
 
 interface Props {
     currentWeather: CurrentWeatherType;
@@ -12,11 +13,15 @@ interface Props {
 }
 const Header: React.FC<Props> = ({currentWeather, isLoading}) => {
     const [icon, setIcon] = useState();
+    const { theme } = useTheme();
+
+    const {weatherIcons} = useWeatherIcons(theme);
 
     useEffect(() => {
         const fetchImage = async () => {
             try {
                 const iconPath =  weatherIcons[currentWeather.weather[0].icon];
+                console.log(iconPath)
                 const response = await import(iconPath);
                 setIcon(response.default);
             } catch (err) {

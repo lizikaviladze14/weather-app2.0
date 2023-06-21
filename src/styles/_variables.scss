@@ -14,5 +14,24 @@
 
   --active-bg-primary: #343e66;
 
-  --el-bg-primary: #081031;
+  --el-bg-primary: #232b4f;
+}
+
+[data-theme='light-mode'] {
+  --site-bg-color: #ececec;
+
+  --text-primary: #000;
+  --text-secondary: #1c1d2c;
+  --text-tertiary: #8c8c8c;
+
+  --white-primary: #fff;
+  --white-secondary: #dbdbdb;
+  --black-primary: #000;
+
+  --border-radius: 5px;
+  --border-primary: 1px solid #9f9ea6;
+
+  --active-bg-primary: #fff;
+
+  --el-bg-primary: #dfdfdf;
 }

@@ -1,7 +1,8 @@
 import './daily-weather-item.scss'
 import React, {useEffect, useState} from "react";
 import {DailyWeatherType} from "../../types";
-import {weatherIcons} from "../../types/WeatherIcons";
+import {useWeatherIcons} from "../../hooks/useWeatherIcons";
+import useTheme from "../../hooks/useTheme";
 
 interface Props {
     dailyItem: DailyWeatherType;
@@ -9,6 +10,9 @@ interface Props {
 }
 const DailyWeatherItem: React.FC<Props> = ({dailyItem, weekDay}) => {
     const [icon, setIcon] = useState();
+    const { theme } = useTheme();
+
+    const {weatherIcons} = useWeatherIcons(theme);
 
     useEffect(() => {
         const fetchImage = async () => {

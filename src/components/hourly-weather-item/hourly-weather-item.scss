@@ -4,7 +4,6 @@
   padding: 2rem;
   background-color: var(--el-bg-primary);
   border-radius: var(--border-radius);
-  margin-right: 2rem;
   text-align: center;
 
   p {
@@ -16,7 +15,7 @@
   }
 
   .weather-icon {
-    max-width: 3rem;
+    width: 4.5rem;
     margin: 1rem auto;
     img {
       width: 100%;
