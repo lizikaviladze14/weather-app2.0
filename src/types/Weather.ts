@@ -1748,7 +1748,7 @@ const mockData = {
 }
 
 import { MinutelyWeatherType } from './MinutelyWeatherType'
-import { CurrentWeatherType} from "./CurrentWeatherType";
+import { DetailedWeatherType} from "./DetailedWeatherType";
 import { HourlyWeatherType } from "./HourlyWeatherType";
 import { DailyWeatherType } from "./DailyWeatherType";
 export interface Weather {
@@ -1756,7 +1756,7 @@ export interface Weather {
     lon: number;
     timezone: string;
     timezone_offset: number;
-    current: CurrentWeatherType;
+    current: DetailedWeatherType;
     minutely: MinutelyWeatherType[];
     hourly: HourlyWeatherType[];
     daily: DailyWeatherType[];

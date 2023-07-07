@@ -1,9 +1,9 @@
 import "./current-weather-info.scss"
 import React from "react";
-import {CurrentWeatherType} from "../../types";
+import {DetailedWeatherType} from "../../types";
 
 interface Props {
-    currentWeather: CurrentWeatherType;
+    currentWeather: DetailedWeatherType;
 }
 const CurrentWeatherInfo: React.FC<Props> = ({currentWeather}) => {
     return (

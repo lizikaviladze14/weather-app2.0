@@ -1,5 +1,5 @@
 import {CurrentWeatherDetailsType, EmptyCurrentDetails} from "./CurrentWeatherDetailsType"
-export interface CurrentWeatherType {
+export interface DetailedWeatherType {
     dt: number;
     sunrise: number;
     sunset: number;
@@ -16,7 +16,7 @@ export interface CurrentWeatherType {
     weather: CurrentWeatherDetailsType[];
 }
 
-export const EmptyCurrentWeather: CurrentWeatherType = {
+export const EmptyCurrentWeather: DetailedWeatherType = {
     dt: 0,
     sunrise: 0,
     sunset: 0,

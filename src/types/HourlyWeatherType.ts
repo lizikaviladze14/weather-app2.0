@@ -1,6 +1,6 @@
-import {CurrentWeatherType} from "./CurrentWeatherType";
+import {DetailedWeatherType} from "./DetailedWeatherType";
 
-export interface HourlyWeatherType extends CurrentWeatherType {
+export interface HourlyWeatherType extends DetailedWeatherType {
     pop: number;
 }
 

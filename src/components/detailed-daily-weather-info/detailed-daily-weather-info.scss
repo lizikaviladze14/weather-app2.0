@@ -1,0 +1,39 @@
+@import "../../styles/_variables.scss";
+
+.detailed-daily-weather-info {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  .info-wrapper {
+    width: 100%;
+    padding: 2.5rem 1.5rem;
+    background-color: var(--active-bg-primary);
+    color: var(--text-tertiary);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    display: flex;
+    gap: 4%;
+
+    .half {
+      width: 48%;
+
+      .info-item {
+        display: flex;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-family: "Roboto-Light", serif;
+          font-size: 1.6rem;
+        }
+
+        span {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}

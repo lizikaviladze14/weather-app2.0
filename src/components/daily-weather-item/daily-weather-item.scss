@@ -1,39 +1,42 @@
 @import "../../styles/_variables.scss";
 .daily-weather-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--el-bg-primary);
-  padding: 2rem;
-  border-radius: var(--border-radius);
   margin-bottom: 1rem;
-
-  .left {
+  .daily-weather-wrapper {
     display: flex;
     align-items: center;
-    img {
-      max-width: 4.5rem;
-      margin-right: 1rem;
-    }
+    justify-content: space-between;
+    background-color: var(--el-bg-primary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    transition: 280ms;
 
-    p {
-      font-size: 1.5rem;
-    }
-  }
-
-  .right {
-    display: flex;
-    align-items: center;
-
-    p {
-      font-size: 1.2rem;
-
-      &.condition {
-        margin-right: 1.5rem;
+    .left {
+      display: flex;
+      align-items: center;
+      img {
+        max-width: 4.5rem;
+        margin-right: 1rem;
       }
 
-      &.degree {
-        color: var(--text-secondary);
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 1.2rem;
+
+        &.condition {
+          margin-right: 1.5rem;
+        }
+
+        &.degree {
+          color: var(--text-secondary);
+        }
       }
     }
   }
