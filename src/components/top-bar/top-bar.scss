@@ -1,5 +1,21 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/media-queries.scss";
+
 .top-bar {
-  padding: 2rem 12rem 0;
+  padding: 2rem 5rem 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  justify-content: flex-end;
+
+  @include device(tablet-portrait) {
+    padding: 2rem 10rem;
+  }
+
+  @include device(tablet-landscape) {
+    padding: 2rem 12rem;
+  }
+
   .themes {
     display: flex;
   }

@@ -4,15 +4,33 @@
   height: 3rem;
   max-width: 75%;
   font-family: "Roboto-Medium", serif;
-  input {
-    width: 100%;
-    height: 100%;
-    outline: none;
-    border: none;
-    background: transparent;
-    padding: 0 1rem;
-    border-bottom: var(--border-primary);
-    font-size: 1.8rem;
-    color: var(--text-primary);
+  .input-wrapper {
+    position: relative;
+    input {
+      width: 100%;
+      height: 100%;
+      outline: none;
+      border: none;
+      background: transparent;
+      padding: 1rem;
+      border-bottom: var(--border-primary);
+      font-size: 1.8rem;
+      color: var(--text-primary);
+    }
+
+    img {
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      bottom: 1.5rem;
+      right: 0;
+      cursor: pointer;
+      filter: var(--search-filter);
+    }
+  }
+
+  .error {
+    margin: 1rem 0;
+    color: var(--error-color);
   }
 }

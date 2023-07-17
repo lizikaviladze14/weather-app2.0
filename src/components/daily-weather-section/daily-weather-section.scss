@@ -1,9 +1,18 @@
 @import "../../styles/_variables.scss";
+@import "../../styles/media-queries.scss";
 
 .daily-weather-section {
-  padding: 0 12rem;
+  padding: 0 5rem;
   margin: 5rem 0;
   min-height: 17rem;
+
+  @include device(tablet-portrait) {
+    padding: 0 10rem;
+  }
+
+  @include device(tablet-landscape) {
+    padding: 0 12rem;
+  }
 
   h3 {
     margin-bottom: 2rem;

@@ -1,10 +1,23 @@
+@import "../../styles/media-queries.scss";
+@import "../../styles/_variables.scss";
+
 .header {
   display: flex;
-  padding: 5rem 12rem;
+  padding: 5rem 5rem;
+
+  @include device(tablet-portrait) {
+    padding: 5rem 10rem;
+  }
+
+  @include device(tablet-landscape) {
+    padding: 5rem 12rem;
+  }
 
   .part {
     .current-weather-info {
-      margin-top: 3rem;
+      @include device(tablet-portrait) {
+        margin-top: 5rem;
+      }
     }
 
     &.right {
@@ -16,7 +29,17 @@
       .current-weather-wrapper {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        max-width: 75%;
+        margin-left: auto;
+        justify-content: center;
+        margin-top: 5rem;
+
+        @include device(tablet-landscape) {
+          max-width: unset;
+          margin-left: unset;
+          margin-top: unset;
+          justify-content: space-between;
+        }
         .current-weather {
           p {
             font-size: 4.5rem;

@@ -1,0 +1,41 @@
+@import "styles/_variables.scss";
+@import "styles/_typography.scss";
+@import "styles/media-queries.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 7px;
+    font-family: "Roboto-Medium", serif;
+
+    @include device(small-phone) {
+        font-size: 5px;
+    }
+
+    @include device(big-phone) {
+        font-size: 8px;
+    }
+
+    @include device(tablet-landscape) {
+        font-size: 9px;
+    }
+
+    @include device(small-desktop) {
+        font-size: 10px;
+    }
+}
+
+body {
+    color: var(--text-primary);
+    background: var(--site-bg-color);
+}
+
+.error {
+    font-size: 3rem;
+    text-align: center;
+    margin: 20rem 2rem;
+}

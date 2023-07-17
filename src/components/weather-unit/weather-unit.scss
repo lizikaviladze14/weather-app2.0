@@ -1,0 +1,15 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/media-queries.scss";
+
+.weather-unit {
+  margin-right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  opacity: 0.7;
+
+  &.active {
+    color: var(--text-primary);
+    opacity: 1;
+  }
+}

@@ -14,12 +14,12 @@
     margin: 0 auto;
     transform: translateY(0.5rem);
     border-radius: 0.5rem;
-    color: var(--white-primary);
+    color: var(--loader-color);
 
     &,
     &:before,
     &:after {
-      background-color: var(--white-primary);
+      background-color: var(--loader-color);
       animation: loaderAnim 1s infinite ease-in-out;
       width: 0.6rem;
       height: 2.4rem;

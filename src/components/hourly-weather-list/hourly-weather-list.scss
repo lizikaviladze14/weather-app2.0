@@ -1,8 +1,18 @@
 @import "../../styles/_variables.scss";
+@import "../../styles/media-queries.scss";
 
 .hourly-weather-list {
-  padding: 0 12rem;
+  padding: 0 5rem;
   display: flex;
   overflow: auto;
   gap: 2rem;
+
+
+  @include device(tablet-portrait) {
+    padding: 0 10rem;
+  }
+
+  @include device(tablet-landscape) {
+    padding: 0 12rem;
+  }
 }

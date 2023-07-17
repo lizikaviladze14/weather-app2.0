@@ -1,6 +1,6 @@
 export const mockData = {
-  lat: 41.6938,
-  lon: 44.8015,
+  lat: 0,
+  lon: 0,
   timezone: "Asia/Tbilisi",
   timezone_offset: 14400,
   current: {
@@ -1465,6 +1465,7 @@ export const mockData = {
       ],
       clouds: 0,
       pop: 0,
+      rain: 0,
       uvi: 10.59,
     },
     {
@@ -1669,6 +1670,7 @@ export const mockData = {
       ],
       clouds: 5,
       pop: 0.04,
+      rain: 0,
       uvi: 8,
     },
     {
@@ -1752,6 +1754,6 @@ export const mockData = {
       uvi: 8,
     },
   ],
-  cityName: "Tbilisi",
-  countryName: "Georgia",
+  cityName: "Fake",
+  countryName: "Data",
 };

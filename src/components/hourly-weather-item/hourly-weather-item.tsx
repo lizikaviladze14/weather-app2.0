@@ -1,43 +1,49 @@
-import './hourly-weather-item.scss'
-import React, {useEffect, useState} from "react";
-import {HourlyWeatherType} from "../../types";
-import {useWeatherIcons} from "../../hooks/useWeatherIcons";
+import "./hourly-weather-item.scss";
+import React, { useEffect, useState } from "react";
+import { HourlyWeatherType, WeatherUnitType } from "../../types";
+import { useWeatherIcons } from "../../hooks/useWeatherIcons";
 import useTheme from "../../hooks/useTheme";
 
 interface Props {
-    hourlyItem: HourlyWeatherType;
-    hour: string;
+  hourlyItem: HourlyWeatherType;
+  hour: string;
+  weatherUnit: WeatherUnitType;
 }
-const HourlyWeatherItem: React.FC<Props> = ({hourlyItem, hour}) => {
-    const [icon, setIcon] = useState();
-    const { theme } = useTheme();
+const HourlyWeatherItem: React.FC<Props> = ({
+  hourlyItem,
+  hour,
+  weatherUnit,
+}) => {
+  const [icon, setIcon] = useState();
+  const { theme } = useTheme();
 
-    const {weatherIcons} = useWeatherIcons(theme);
+  const { weatherIcons } = useWeatherIcons(theme);
 
-    useEffect(() => {
-        const fetchImage = async () => {
-            try {
-                const iconPath = weatherIcons[hourlyItem.weather[0].icon];
-                const response = await import(iconPath);
-                setIcon(response.default);
-            } catch (err) {
-                console.log(err);
-            }
-        }
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const iconPath = weatherIcons[hourlyItem.weather[0].icon];
+        const response = await import(iconPath);
+        setIcon(response.default);
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-        fetchImage();
-    }, [weatherIcons, hourlyItem, theme])
+    fetchImage();
+  }, [weatherIcons, hourlyItem, theme]);
 
-
-    return (
-        <div className={"hourly-weather-item"}>
-            <p className={"time"}>{hour}</p>
-            <div className={"weather-icon"}>
-                <img src={icon} alt={hourlyItem.weather[0].description}/>
-            </div>
-            <p className={"temperature"}>{Math.floor(hourlyItem.temp)}&deg;C</p>
-        </div>
-    )
-}
+  return (
+    <div className={"hourly-weather-item"}>
+      <p className={"time"}>{hour}</p>
+      <div className={"weather-icon"}>
+        <img src={icon} alt={hourlyItem.weather[0].description} />
+      </div>
+      <p className={"temperature"}>
+        {Math.floor(hourlyItem.temp)}&deg;{weatherUnit}
+      </p>
+    </div>
+  );
+};
 
 export default HourlyWeatherItem;

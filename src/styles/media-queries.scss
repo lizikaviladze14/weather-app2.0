@@ -1,45 +1,57 @@
-@mixin portrait {
-  @media screen and (orientation: portrait) {
-    @content;
-  }
-}
-@mixin landscape {
-  @media screen and (orientation: landscape) {
-    @content;
-  }
-}
-@mixin mobile-small-portrait {
-  @media screen and (min-width: 319px) {
-    @content;
-  }
-}
-@mixin mobile-small-landscape {
-  @media screen and (min-width: 480px) and (orientation: landscape) {
-    @content;
-  }
-}
-@mixin mobile-portrait {
-  @media screen and (min-width: 479px) and (orientation: portrait) {
-    @content;
-  }
-}
-@mixin mobile-landscape {
-  @media screen and (min-width: 600px) and (orientation: landscape) {
-    @content;
-  }
-}
-@mixin tablet-portrait {
-  @media screen and (min-width: 768px) and (orientation: portrait) {
-    @content;
-  }
-}
-@mixin tablet-landscape {
-  @media screen and (min-width: 992px) and (orientation: landscape) {
-    @content;
-  }
-}
-@mixin desktop {
-  @media screen and (min-width: 1200px) {
-    @content;
+@mixin device($breakpoints...) {
+  @each $breakpoint in $breakpoints {
+    @if $breakpoint == small-phone {
+      @media (max-width: 300px) {
+        @content
+      };
+    }
+
+    @if $breakpoint == phone {
+      @media (max-width: 600px) {
+        @content
+      };
+    }
+
+    @if $breakpoint == big-phone {
+      @media (min-width: 500px) {
+        @content
+      };
+    }
+
+    @if $breakpoint == tablet-portrait {
+      @media (min-width: 600px) {
+        @content
+      };
+    }
+
+    @if $breakpoint == tablet {
+      @media (min-width: 750px) {
+        @content
+      };
+    }
+
+    @if $breakpoint == tablet-landscape {
+      @media (min-width: 880px)  {
+        @content
+      };
+    }
+
+    @if $breakpoint == small-desktop {
+      @media (min-width: 1100px) {
+        @content
+      };
+    }
+
+    @if $breakpoint == medium-desktop {
+      @media (min-width: 1300px) {
+        @content
+      };
+    }
+
+    @if $breakpoint == big-desktop {
+      @media (min-width: 1680px) {
+        @content
+      };
+    }
   }
 }

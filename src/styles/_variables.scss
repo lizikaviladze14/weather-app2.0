@@ -15,13 +15,19 @@
   --active-bg-primary: #343e66;
 
   --el-bg-primary: #232b4f;
+
+  --loader-color: #fff;
+
+  --error-color: #F00;
+
+  --search-filter: invert(99%) sepia(66%) saturate(2%) hue-rotate(283deg) brightness(111%) contrast(100%);
 }
 
 [data-theme='light-mode'] {
   --site-bg-color: #ececec;
 
   --text-primary: #000;
-  --text-secondary: #1c1d2c;
+  --text-secondary: #36373d;
   --text-tertiary: #8c8c8c;
 
   --white-primary: #fff;
@@ -34,4 +40,8 @@
   --active-bg-primary: #fff;
 
   --el-bg-primary: #dfdfdf;
+
+  --loader-color: #000;
+
+  --search-filter: none;
 }
