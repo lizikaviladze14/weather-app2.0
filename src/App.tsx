@@ -54,7 +54,7 @@ function App() {
   // false will change nothing if you have not few mandatory
   // api keys (which I use to retrieve the real data)
   // in the .env file in the root directory
-  const mockData = false;
+  const mockData = true;
 
   const { lat, lon, cityName, countryName, isAppLoading, error } = useLocation(
     addressValue,
