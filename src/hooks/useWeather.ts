@@ -33,7 +33,6 @@ export const useWeather = (
   });
 
   const fetchMockData = () => {
-    console.log("fetch mock data");
     setWeatherData({
       currentWeather: mockData.current,
       dailyWeather: mockData.daily,
@@ -58,7 +57,6 @@ export const useWeather = (
               }`,
             );
             const result = await response.json();
-            console.log(result);
             setWeatherData({
               currentWeather: result.current,
               dailyWeather: result.daily,
@@ -71,7 +69,6 @@ export const useWeather = (
       } catch (error) {
         console.error(error);
         setWeatherError(error);
-        // Handle the error here, e.g., set an error state or display an error message.
       } finally {
         setIsLoading(false);
       }

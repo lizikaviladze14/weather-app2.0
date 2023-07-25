@@ -106,7 +106,7 @@ export const useLocation = (
                       console.log("City or country not found");
                     }
                   } else {
-                    console.log("City not found");
+                    console.log("City or country not found");
                   }
                   setIsAppLoading(false);
                 },
