@@ -59,7 +59,10 @@ const DailyWeatherItem: React.FC<Props> = ({
         onClick={() => setShowDetailedInfo(!showDetailedInfo)}
       >
         <div className={"left"}>
-          <img src={icon} alt={dailyItem.weather[0].description} />
+          <img
+            src={`/images/weather-icons/dark-mode/icon_o1d.png`}
+            alt={dailyItem.weather[0].description}
+          />
           <p>{weekDay}</p>
         </div>
         <div className={"right"}>
