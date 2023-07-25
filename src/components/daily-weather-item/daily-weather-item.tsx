@@ -1,10 +1,11 @@
 import "./daily-weather-item.scss";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { DailyWeatherType, WeatherUnitType } from "../../types";
-import { useWeatherIcons } from "../../hooks/useWeatherIcons";
+// import { useWeatherIcons } from "../../hooks/useWeatherIcons";
 import useTheme from "../../hooks/useTheme";
 import DetailedDailyWeatherInfo from "../detailed-daily-weather-info/detailed-daily-weather-info";
 import { SpeedUnitType } from "../../types/SpeedUnitType";
+import weatherIcons from "../../hooks/weatherIcons"; // Import the weatherIcons mapping object
 
 interface Props {
   dailyItem: DailyWeatherType;
@@ -18,25 +19,38 @@ const DailyWeatherItem: React.FC<Props> = ({
   weatherUnit,
   speedUnit,
 }) => {
-  const [icon, setIcon] = useState();
-  const { theme } = useTheme();
+  // const [icon, setIcon] = useState();
+  // const { theme } = useTheme();
   const [showDetailedInfo, setShowDetailedInfo] = useState(false);
 
-  const { weatherIcons } = useWeatherIcons(theme);
+  // const { weatherIcons } = await useWeatherIcons(theme);
+  //
+  // useEffect(() => {
+  //   const fetchImage = async () => {
+  //     try {
+  //       const iconPath = weatherIcons[dailyItem.weather[0].icon];
+  //       const response = await import(iconPath);
+  //       setIcon(response.default);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //
+  //   fetchImage();
+  // }, [weatherIcons, dailyItem, theme]);
 
-  useEffect(() => {
-    const fetchImage = async () => {
-      try {
-        const iconPath = weatherIcons[dailyItem.weather[0].icon];
-        const response = await import(iconPath);
-        setIcon(response.default);
-      } catch (err) {
-        console.log(err);
-      }
-    };
+  const { theme } = useTheme();
 
-    fetchImage();
-  }, [weatherIcons, dailyItem, theme]);
+  const getIconByWeatherCode = (weatherCode: string): string => {
+    const themeIcons = weatherIcons[theme];
+    if (themeIcons && themeIcons[weatherCode]) {
+      return themeIcons[weatherCode];
+    }
+    // Provide a fallback in case the weather code or theme is not recognized.
+    return "";
+  };
+
+  const icon = getIconByWeatherCode(dailyItem.weather[0].icon);
 
   return (
     <div className={"daily-weather-item"}>
