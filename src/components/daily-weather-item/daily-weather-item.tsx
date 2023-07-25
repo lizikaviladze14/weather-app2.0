@@ -19,25 +19,8 @@ const DailyWeatherItem: React.FC<Props> = ({
   weatherUnit,
   speedUnit,
 }) => {
-  const [icon, setIcon] = useState();
   const { theme } = useTheme();
   const [showDetailedInfo, setShowDetailedInfo] = useState(false);
-
-  const { weatherIcons } = useWeatherIcons(theme);
-
-  useEffect(() => {
-    const fetchImage = async () => {
-      try {
-        const iconPath = weatherIcons[dailyItem.weather[0].icon];
-        const response = await import(iconPath);
-        setIcon(response.default);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    fetchImage();
-  }, [weatherIcons, dailyItem, theme]);
 
   // const { theme } = useTheme();
   //
@@ -60,7 +43,7 @@ const DailyWeatherItem: React.FC<Props> = ({
       >
         <div className={"left"}>
           <img
-            src={`/images/weather-icons/dark-mode/icon_o1d.png`}
+            src={`/images/weather_icons/${theme}/icon_${dailyItem.weather[0].icon}.png`}
             alt={dailyItem.weather[0].description}
           />
           <p>{weekDay}</p>

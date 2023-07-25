@@ -68,6 +68,8 @@ function App() {
     weatherError,
   } = useWeather(lat, lon, mockData, weatherUnitValue);
 
+  const icon_01d = "icon_01d";
+
   useEffect(() => {
     if (!isAppLoading) {
       setIsDataLoaded(true);
