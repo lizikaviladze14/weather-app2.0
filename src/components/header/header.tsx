@@ -1,10 +1,9 @@
 import "./header.scss";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import BaseInput from "../base/input/base-input";
 import CurrentWeatherInfo from "../current-weather-info/current-weather-info";
 import { DetailedWeatherType, WeatherUnitType } from "../../types";
 import BaseLoader from "../base/loader/base-loader";
-import { useWeatherIcons } from "../../hooks/useWeatherIcons";
 import useTheme from "../../hooks/useTheme";
 import { SpeedUnitType } from "../../types/SpeedUnitType";
 
@@ -28,28 +27,10 @@ const Header: React.FC<Props> = ({
   weatherUnit,
   speedUnit,
 }) => {
-  const [icon, setIcon] = useState();
   const { theme } = useTheme();
-
-  const { weatherIcons } = useWeatherIcons(theme);
-
   const handleInputEnter = (addressValue: string) => {
     emitAddressValue(addressValue);
   };
-
-  useEffect(() => {
-    const fetchImage = async () => {
-      try {
-        const iconPath = weatherIcons[currentWeather.weather[0].icon];
-        const response = await import(iconPath);
-        setIcon(response.default);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    fetchImage();
-  }, [currentWeather]);
 
   const currentDate = new Date();
   const formattedDate = currentDate.toDateString();
@@ -64,7 +45,10 @@ const Header: React.FC<Props> = ({
           <h2>{countryName}</h2>
           <p>{formattedDate}</p>
           <div className={"weather-icon"}>
-            <img src={icon} alt={currentWeather.weather[0].description} />
+            <img
+              src={`/images/weather_icons/${theme}/icon_${currentWeather.weather[0].icon}.png`}
+              alt={currentWeather.weather[0].description}
+            />
           </div>
         </div>
       )}

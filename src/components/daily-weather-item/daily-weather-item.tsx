@@ -1,11 +1,9 @@
 import "./daily-weather-item.scss";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { DailyWeatherType, WeatherUnitType } from "../../types";
-import { useWeatherIcons } from "../../hooks/useWeatherIcons";
 import useTheme from "../../hooks/useTheme";
 import DetailedDailyWeatherInfo from "../detailed-daily-weather-info/detailed-daily-weather-info";
 import { SpeedUnitType } from "../../types/SpeedUnitType";
-// import getImageByKey from "../../hooks/weatherIcons"; // Import the weatherIcons mapping object
 
 interface Props {
   dailyItem: DailyWeatherType;
@@ -21,19 +19,6 @@ const DailyWeatherItem: React.FC<Props> = ({
 }) => {
   const { theme } = useTheme();
   const [showDetailedInfo, setShowDetailedInfo] = useState(false);
-
-  // const { theme } = useTheme();
-  //
-  // const getIconByWeatherCode = (weatherCode: string): string => {
-  //   const themeIcons = weatherIcons[theme];
-  //   if (themeIcons && themeIcons[weatherCode]) {
-  //     return themeIcons[weatherCode];
-  //   }
-  //   // Provide a fallback in case the weather code or theme is not recognized.
-  //   return "";
-  // };
-  //
-  // const icon = getIconByWeatherCode(dailyItem.weather[0].icon);
 
   return (
     <div className={"daily-weather-item"}>
