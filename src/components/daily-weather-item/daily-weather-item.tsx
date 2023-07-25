@@ -1,5 +1,5 @@
 import "./daily-weather-item.scss";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { DailyWeatherType, WeatherUnitType } from "../../types";
 // import { useWeatherIcons } from "../../hooks/useWeatherIcons";
 import useTheme from "../../hooks/useTheme";

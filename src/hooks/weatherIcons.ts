@@ -1,8 +1,8 @@
-const isLocal =
-  window.location.hostname === "localhost" ||
-  window.location.hostname === "127.0.0.1";
+// const isLocal =
+//   window.location.hostname === "localhost" ||
+//   window.location.hostname === "127.0.0.1";
 
-const iconsPath = isLocal ? "" : "weather-app2.0";
+// const iconsPath = isLocal ? "" : "weather-app2.0";
 
 const weatherIcons: { [key: string]: { [key: string]: string } } = {
   "dark-mode": {
